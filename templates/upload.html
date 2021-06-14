@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UpLoad</title>
+</head>
+<body>
+    <a href="/index">主页</a>
+    <a href="/cls">退出</a>
+    {% if data.tips == 'true'%}
+        <script>
+            window.alert("上传成功！")
+        </script>
+    {% endif%}
+    <div>
+        <p>上传文件到{{data.name}}</p>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="the_file" placeholder="请选择要上传的文件"><br>
+            <input type="submit" value="开始上传">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "base.html"%}
+
+{%block title%}
+  Index
+{%endblock%}
+
+{%block body%}
+<script>
+  function addDir(){
+     window.open("{{url_for('addDir')}}", "_blank",'height=200,width=400,status=yes,top=200,left=400,toolbar=no,menubar=no,location=no')
+  }
+</script>
+
+  <a href="/upload">上传文件</a>
+  <button type="button" onclick="addDir();">添加一个文件夹</button>
+  <br>
+
+{% for item in data.nameList%}
+  <a href="{{url_for('index',path=item)}}">{{item}}</a>/
+{%endfor%}
+
+  <div style="width:100%;height:1px;background-color:#000;"></div>
+
+{% for item in data.d%}
+  <br>
+  <a href="{{url_for('index',path=item)}}">{{item}}</a>
+{%endfor%}
+{% for item in data.f%}
+  <br>
+  <a href="{{url_for('down',name=data.name,filename=item)}}">{{item}}</a>
+{%endfor%}
+
+{%endblock%}

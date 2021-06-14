@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+</head>
+<body>
+<small id="nowTime">
+    <script>
+        document.getElementById("nowTime").innerHTML=Date()
+    </script>
+</small>
+
+<script>
+  function nowTime(){
+    document.getElementById("nowTime").innerHTML=Date();
+  }
+  setInterval(nowTime,1000);
+</script>
+
+<a href="{{url_for('cls')}}">退出</a><br>
+<div style="width:100%;height:1px;background-color:#000;"></div>
+{%block body%}{%endblock%}
+</body>
+</html>
